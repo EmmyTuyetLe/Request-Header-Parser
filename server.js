@@ -25,12 +25,12 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
-let responseObject={}
-app.enable
+let responseObject = {}
+app.enable("trust proxy")
 app.get("/api/whoami", (req, res) => {
-responseObject["ipaddress"] = request.ip
-responseObject["language"] = request.get("accept-language")
-responseObject["software"] = request.get ("User-Agent")
+responseObject["ipaddress"] = req.ip
+responseObject["language"] = req.get("accept-language")
+responseObject["software"] = req.get ("User-Agent")
 res.json(responseObject)
 });
 
